@@ -1,10 +1,15 @@
 # Import necessary libraries
+import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+password = os.environ["PASSWORD"]
+sender_email = os.environ["EMAIL"]
+smtp_address = os.environ["SMTP"]
+
 # Define sender email address
-sender_email = 'your-email@gmail.com'
+# sender_email = 'your-email@gmail.com'
 
 # Define receiver email addresses (multiple)
 receiver_emails = ['user1-email@example.com', 'user2-email@example.com', 'user3-email@example.com']
