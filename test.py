@@ -5,6 +5,7 @@ import unittest
 import os
 import csv
 from SMTPEmail import SMTPEmail
+import datetime
 
 class TestCalculations(unittest.TestCase):
 
@@ -22,6 +23,20 @@ class TestCalculations(unittest.TestCase):
         with open(filename, 'r') as reader:
             content = reader.read()
         return content
+
+    def test_time(self):
+        # Get the current time
+        now = datetime.datetime.now()
+
+        # Add 24 hours to the current time
+        tomorrow = now + datetime.timedelta(hours=24)
+
+        delta = tomorrow - now
+
+        print(now)
+        print(tomorrow)
+        print(delta)
+        print(delta.total_seconds())
 
     def test_class(self):
         sender_email = os.environ["EMAIL"]
